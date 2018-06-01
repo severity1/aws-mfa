@@ -11,7 +11,7 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Name = "aws-mfa"
-	app.Usage = "fight the loneliness!"
+	app.Usage = "Tool to help fetch temp credentials if IAM requires MFA."
 	app.Action = func(c *cli.Context) error {
 		fmt.Println("Hello friend!")
 		return nil
