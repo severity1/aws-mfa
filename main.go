@@ -1,5 +1,24 @@
 package main
-import "fmt"
+
+import (
+	"fmt"
+	"log"
+	"os"
+
+	"github.com/urfave/cli"
+)
+
 func main() {
-    fmt.Println("Hello, World")
+	app := cli.NewApp()
+	app.Name = "aws-mfa"
+	app.Usage = "fight the loneliness!"
+	app.Action = func(c *cli.Context) error {
+		fmt.Println("Hello friend!")
+		return nil
+	}
+
+	err := app.Run(os.Args)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
